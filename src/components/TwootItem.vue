@@ -34,7 +34,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 .twoot-item {
     padding: 20px;
     background-color: white;
@@ -45,13 +45,14 @@ export default {
     cursor: pointer;
     transition: all 0.25s ease;
 
+    // In scss '&' means 'this'
+    &:hover {
+        transform: scale(1.1, 1.1)
+    }
+    .twoot-item__user {
+        font-weight: bold;
+    }
 }
 
-.twoot-item:hover {
-    transform: scale(1.1, 1.1)
-}
 
-.twoot-item__user {
-    font-weight: bold;
-}
 </style>

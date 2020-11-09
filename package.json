@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^10.0.4",
     "vue": "^3.0.0"
   },
   "devDependencies": {
@@ -33,7 +35,10 @@
       "parser": "babel-eslint"
     },
     "rules": {
-      "indent": ["error", 4]
+      "indent": [
+        "error",
+        4
+      ]
     }
   },
   "browserslist": [
