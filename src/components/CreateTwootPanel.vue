@@ -14,7 +14,7 @@
             </div>
 
 
-            <button>
+            <button :disabled="newTwootCharacterCount > 180">
                 Twoot it!
             </button>
         </div>
@@ -74,27 +74,48 @@ export default {
 
         .create-twoot-type {
             padding: 10px 0;
+
+            #newTwootType {
+                margin-left: 5px;
+                padding: 5px 10px;
+                
+                border-radius: 5px;
+                border: none;
+                
+                background-color: #3f7394;
+                font: 16px sans-serif;
+                color: white;
+            }
         }
 
         button {
-            padding: 5px 20px;
             margin: auto 0;
+            padding: 5px 20px;
+            
             border-radius: 5px;
             border: none;
-            background-color: deeppink;
+            
+            background-color: var(--base-color);
             color: white;
             font-weight: bold;
+
+            transition: background-color 0.2s ease-in-out;
+
+            &:hover {
+                background-color: #018577;
+            }
         }
     }
 
     &.--exceeded {
-        color: red;
-        border-color: red;
+        > label {
+            color: red;
+        }
 
         .create-twoot-panel__submit {
             button {
-                background-color: red;
-                color: white;
+                background-color: #cccccc;
+                cursor: not-allowed;
             }
         }
     }

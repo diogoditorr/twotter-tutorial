@@ -36,23 +36,31 @@ export default {
 
 <style lang="scss" scoped>
 .twoot-item {
+    margin-bottom: 10px;
     padding: 20px;
-    background-color: white;
+    
     border-radius: 5px;
     border: 1px solid #DFE3E8;
-    margin-bottom: 10px;
+    
     box-sizing: border-box;
+    
+    background-color: white;
+    
     cursor: pointer;
+    
     transition: all 0.25s ease;
 
     // In scss '&' means 'this'
     &:hover {
         transform: scale(1.1, 1.1)
     }
+
     .twoot-item__user {
         font-weight: bold;
     }
+
+    .twoot-item__content {
+        word-break: break-word;
+    }
 }
-
-
 </style>

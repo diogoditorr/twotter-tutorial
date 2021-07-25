@@ -6,8 +6,8 @@
                     Twotter
                 </div>
             </router-link>
-            <div class="navigation__user" v-if="user">
-                {{ user.username }}
+            <div class="navigation__user" v-if="getUser">
+                {{ getUser.username }}
             </div>    
         </nav>
         <router-view/>
@@ -16,16 +16,29 @@
 
 <script>
 import { useStore } from 'vuex'; 
-import { computed } from 'vue';
+// import { computed } from 'vue';
 
 export default {
     name: 'App',
-    setup() {
-        const store = useStore();        
-        const user = computed(() => store.state.User.user)
-
+    data() {
         return {
-            user
+            store: useStore(),
+            option: 'safe'
+        }
+    },
+    // setup() {
+    //     const store = useStore();        
+    //     const user = computed(() => store.state.User.user)
+
+    //     return {
+    //         option: 'safe',
+    //         user
+    //     }
+    // },
+    // Change the presentation of existence data
+    computed: {
+        getUser() {
+            return this.store.state.User.user;
         }
     }
 }
@@ -46,7 +59,7 @@ export default {
         align-items: center;
         justify-content: space-between;
         padding: 10px 5%;
-        background-color: deeppink;
+        background-color: var(--base-color-2);
         color: white;
 
         .navigation__logo {

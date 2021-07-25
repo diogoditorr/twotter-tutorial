@@ -99,11 +99,14 @@ export default {
     .user-profile__user-panel {
         display: flex;
         flex-direction: column;
+
+        margin-bottom: auto;
         padding: 20px;
-        background-color: white;
+        
         border-radius: 5px;
         border: 1px solid #DFE3E8;
-        margin-bottom: auto;
+        
+        background-color: white;
 
         // margin-right: 50px;
         // height: fit-content;
